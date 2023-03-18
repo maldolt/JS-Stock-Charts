@@ -31,7 +31,6 @@ function getColor(stock) {
   
     const stocks = [GME, MSFT, DIS, BNTX];
   
-    console.log(stocks[0].values);
     stocks.forEach( stock => stock.values.reverse())
     
     new Chart(timeChartCanvas.getContext("2d"), {
@@ -46,8 +45,7 @@ function getColor(stock) {
         }))
       }
     });
-    new Chart(highestStockPrice.getContext('2d'))
-        const config = {
+    new Chart(highestPriceChartCanvas.getContext('2d'),{
         type: 'bar',
         data: {
             labels: stocks.map(stock => stock.meta.symbol),
@@ -61,10 +59,10 @@ function getColor(stock) {
                 )),
                 data: stocks.map(stock => (
                     findHighest(stock.values)
-                    ))
-                }]
-            }
-        });
+                ))
+            }]
+        }
+    });
             
   }
   
@@ -85,4 +83,4 @@ function getColor(stock) {
   // This is an example of "destructuring" an object
   // "Destructuring" creates new variables from an object or an array
   
-  main();
+  main()
